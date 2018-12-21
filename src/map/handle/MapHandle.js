@@ -4,6 +4,7 @@
 import Map from 'ol/map';
 import View from 'ol/view';
 import TileLayer from 'ol/layer/tile';
+import OSM from 'ol/source/OSM';
 import XYZ from 'ol/source/xyz';
 import Proj from 'ol/proj';
 import RequestHandle from '@/request'
@@ -20,9 +21,10 @@ export default {
     this.map = new Map({
       layers: [
         new TileLayer({
-          source: new XYZ({
-            url: 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + access_token
-          })
+          source:new OSM()
+          // source: new XYZ({
+          //   url: 'https://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + access_token
+          // })
         })
       ],
       target: id,

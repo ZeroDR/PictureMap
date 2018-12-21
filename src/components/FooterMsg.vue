@@ -3,7 +3,7 @@
     <div class="footer-items">
       <ul>
         <li v-for="(item,key,index) in items">
-          <span>{{item.value}}</span>
+          <div style="line-height:12px;"><img style="margin:0 5px;" src="/static/imgs/gongan_d.png" /><span>{{item.value}}</span></div>
         </li>
       </ul>
     </div>
@@ -16,7 +16,7 @@
       return {
         items: [{
           name: '',
-          value: '京ICP备16055951号'
+          value: '豫ICP备18044703号'
         }]
       };
     }

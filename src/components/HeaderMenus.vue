@@ -13,11 +13,11 @@
           <Icon type="location"></Icon>
           尚族
         </MenuItem>
-        <MenuItem name="3">
+        <MenuItem name="3" v-if="false">
           <Icon type="fork"></Icon>
           尚食
         </MenuItem>
-        <MenuItem name="4">
+        <MenuItem name="4" v-if="false">
           <Icon type="map"></Icon>
           尚图
         </MenuItem>
