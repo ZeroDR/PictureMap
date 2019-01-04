@@ -69,6 +69,20 @@ const AboutRouters = {
   component: About
 };
 
-export default new Router({
+const router = new Router({
   routes: [IndexRoutes, FamilyRoutes, FoodRoutes, MapRouters, AboutRouters]
 })
+
+// 添加路由守卫
+// router.beforeEach((to, from, next) => {
+//     const isLogin = false;
+//     if (to.path === '/frs') {
+//         next();
+//     } else {
+//         isLogin ? next() : next('/frs');
+//     }
+// })
+
+export default router;
+
+
