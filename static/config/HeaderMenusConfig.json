@@ -1,0 +1,23 @@
+{
+  "menus": [{
+    "label": "尚游",
+    "icon": "flag",
+    "visible": true
+  },{
+    "label": "尚族",
+    "icon": "location",
+    "visible": true
+  },{
+    "label": "尚食",
+    "icon": "fork",
+    "visible": true
+  },{
+    "label": "尚图",
+    "icon": "map",
+    "visible": true
+  },{
+    "label": "关于",
+    "icon": "settings",
+    "visible": true
+  }]
+}

@@ -5,25 +5,9 @@
     </div>
     <div class="menu-list">
       <Menu mode="horizontal" :theme="themeName" active-name="1" @on-select="checkEvent">
-        <MenuItem name="1">
-          <Icon type="flag"></Icon>
-          尚游
-        </MenuItem>
-        <MenuItem name="2">
-          <Icon type="location"></Icon>
-          尚族
-        </MenuItem>
-        <MenuItem name="3" v-if="false">
-          <Icon type="fork"></Icon>
-          尚食
-        </MenuItem>
-        <MenuItem name="4" v-if="false">
-          <Icon type="map"></Icon>
-          尚图
-        </MenuItem>
-        <MenuItem name="5">
-          <Icon type="settings"></Icon>
-          关于
+        <MenuItem :name="index+1" v-for="(item,index) in menus" v-if="item.visible">
+          <Icon :type="item.icon"></Icon>
+          {{item.label}}
         </MenuItem>
       </Menu>
     </div>
@@ -31,13 +15,42 @@
 </template>
 <script>
   import LinkPanel from '@/components/LinkPanel'
+  import Axios from 'axios'
 
   export default {
     name: 'HeaderMenus',
     data () {
       return {
-        themeName: 'light'
+        themeName: 'light',
+        menus:[{
+          label: "尚游",
+          icon: "flag",
+          visible: true
+        },{
+          label: "尚族",
+          icon: "location",
+          visible: true
+        },{
+          label: "尚食",
+          icon: "fork",
+          visible: true
+        },{
+          label: "尚图",
+          icon: "map",
+          visible: true
+        },{
+          label: "关于",
+          icon: "settings",
+          visible: true
+        }]
       };
+    },
+    created(){
+      Axios.get('/static/config/HeaderMenusConfig.json').then(res=>{
+        this.menus = res.data.menus;
+      }).catch(ex=>{
+        console.log(ex);
+      })
     },
     methods: {
       checkEvent(e){
