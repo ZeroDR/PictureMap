@@ -3,7 +3,7 @@
     <div class="footer-items">
       <ul>
         <li v-for="(item,key,index) in items">
-          <div style="padding:10px 0;font-size:14px;"><img style="padding:10px 5px;vertical-align: middle;" src="/static/imgs/gongan_d.png" /><span>{{item.value}}</span></div>
+          <div style="line-height:12px;"><img style="margin:0 5px;" src="/static/imgs/gongan_d.png" /><span>{{item.value}}</span></div>
         </li>
       </ul>
     </div>
@@ -22,7 +22,7 @@
     }
   };
 </script>
-<style lang="scss" scoped>
+<style scoped>
   .footer-panel {
     height: 120px;
     width: 100%;
@@ -45,18 +45,12 @@
   li {
     float: left;
     height:24px;
-    font-size:14px;
-    div {
-      padding:10px 0;
-      img {
-        padding: 0 10px;
-        vertical-align: middle;
-      }
+  }
 
-      span {
-        color: #666;
-        font-family: "Microsoft YaHei UI";
-      }
-    }
+  li > span {
+    display: inline-block;
+    line-height: 24px;
+    color: #666;
+    font-family: "Microsoft YaHei UI";
   }
 </style>
